@@ -45,6 +45,16 @@ jobs:
       - name: Clone repo
         run: |
           git clone https://github.com/oven-sh/bun.git
+          
+      - name: make vendor
+        run: |
+          cd bun
+          make vendor
+          
+      - name: make identifier-cache
+        run: |
+          cd bun
+          make identifier-cache
 
       - name: make regenerate-bindings
         run: |
