@@ -12,12 +12,15 @@ jobs:
   # This workflow contains a single job called "build"
   build:
     # The type of runner that the job will run on
-    runs-on:  ubuntu-18.04
+    runs-on:  ubuntu-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - name: Install Archlinux
         run: curl -L https://github.com/zaoqi/github-actions-archlinux/raw/master/install.sh | sh
+        
+      - name: Show sudoers
+        run: cat /etc/sudoers
         
       - name: Install Deps
         run: |
