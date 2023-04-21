@@ -16,6 +16,9 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+      - name: Install Archlinux
+        run: curl -L https://github.com/zaoqi/github-actions-archlinux/raw/master/install.sh | sh
+        
       - name: Install Deps
         run: |
           pacman -Syu --noconfirm --needed
