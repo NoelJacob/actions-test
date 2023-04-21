@@ -34,6 +34,7 @@ jobs:
           sudo apt install cargo ccache cmake esbuild git golang libtool ninja-build pkg-config rustc
           sudo apt install nodejs npm
           npm install -g @oven/zig
+          npm install -g bun
           
       - name: Test Zig
         run: zig version
