@@ -21,11 +21,11 @@ jobs:
         
       - name: Install Deps
         run: |
-          pacman -Syu --noconfirm --needed
-          pacman -S --noconfirm --needed llvm clang lld
-          pacman -S --noconfirm --needed base-devel ccache cmake esbuild git go libiconv libtool make ninja pkg-config python rust sed unzip
-          pacman -S --noconfirm --needed zig
-          pacman -S --noconfirm --needed nodejs npm
+          sudo pacman -Syu --noconfirm --needed
+          sudo pacman -S --noconfirm --needed llvm clang lld
+          sudo pacman -S --noconfirm --needed base-devel ccache cmake esbuild git go libiconv libtool make ninja pkg-config python rust sed unzip
+          sudo pacman -S --noconfirm --needed zig
+          sudo pacman -S --noconfirm --needed nodejs npm
 
       - name: Clone repo
         run: |
