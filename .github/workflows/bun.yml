@@ -34,7 +34,6 @@ jobs:
           sudo apt install cargo ccache cmake esbuild git golang libtool ninja-build pkg-config rustc
           sudo apt install nodejs npm
           npm install -g @oven/zig
-          npm install -g bun
           
       - name: Test Zig
         run: zig version
@@ -61,10 +60,15 @@ jobs:
           cd bun
           make identifier-cache
 
-      - name: make regenerate-bindings
+      - name: make clean-bindings
         run: |
           cd bun
-          make regenerate-bindings
+          make clean-bindings
+          
+      - name: make jsc-check
+        run: |
+          cd bun
+          make jsc-check
           
       - name: make headers
         run: |
