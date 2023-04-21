@@ -29,7 +29,7 @@ jobs:
 
       - name: Install Ubuntu Deps
         run: |
-          sudo apt install llvm@15 lld@15
+          sudo apt install llvm-15 lld-15
           sudo apt install cargo ccache cmake esbuild git golang libtool ninja-build pkg-config rustc
           sudo apt install nodejs npm
           npm install -g @oven/zig
