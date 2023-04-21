@@ -29,7 +29,7 @@ jobs:
 
       - name: Install Ubuntu Deps
         run: |
-          wget (https://apt.llvm.org/llvm.sh](https://apt.llvm.org/llvm.sh) -O - | sudo bash -s -- 15 all
+          wget https://apt.llvm.org/llvm.sh -O - | sudo bash -s -- 15 all
           sudo apt install cargo ccache cmake esbuild git golang libtool ninja-build pkg-config rustc
           sudo apt install nodejs npm
           npm install -g @oven/zig
