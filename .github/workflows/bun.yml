@@ -46,10 +46,25 @@ jobs:
         run: |
           git clone https://github.com/oven-sh/bun.git
 
-      - name: make setup
+      - name: make regenerate-bindings
         run: |
           cd bun
-          make setup
+          make regenerate-bindings
+          
+      - name: make headers
+        run: |
+          cd bun
+          make headers
+          
+      - name: make codegen
+        run: |
+          cd bun
+          make codegen
+          
+      - name: make generate-sink
+        run: |
+          cd bun
+          make generate-sink
 
       - name: make release-bindings -j12
         run: |
