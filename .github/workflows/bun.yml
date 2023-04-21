@@ -36,6 +36,9 @@ jobs:
           
       - name: Test Zig
         run: zig version
+        
+      - name: Clang
+        run: which clang-15
 
       - name: Clone repo
         run: |
