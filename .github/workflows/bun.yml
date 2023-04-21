@@ -51,6 +51,11 @@ jobs:
           cd bun
           make vendor
           
+      - name: make builtins
+        run: |
+          cd bun
+          make builtins
+          
       - name: make identifier-cache
         run: |
           cd bun
