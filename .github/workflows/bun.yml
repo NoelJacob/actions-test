@@ -40,13 +40,18 @@ jobs:
       - name: Clone repo
         run: |
           git clone https://github.com/oven-sh/bun.git
-          cd ./bun/
 
       - name: make setup
-        run: make setup
+        run: |
+          cd bun
+          make setup
 
       - name: make release-bindings -j12
-        run: make release-bindings -j12
+        run: |
+          cd bun 
+          make release-bindings -j12
 
       - name: make release
-        run: make release
+        run: |
+          cd bun
+          make release
