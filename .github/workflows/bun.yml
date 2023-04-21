@@ -16,19 +16,26 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - name: Install Archlinux
-        run: curl -L https://github.com/zaoqi/github-actions-archlinux/raw/master/install.sh | sh
-        
-      - name: Show sudoers
-        run: cat /etc/sudoers
-        
-      - name: Install Deps
+#      - name: Install Archlinux
+#        run: curl -L https://github.com/zaoqi/github-actions-archlinux/raw/master/install.sh | sh
+#        
+#      - name: Install Deps
+#        run: |
+#          sudo pacman -Syu --noconfirm --needed
+#          sudo pacman -S --noconfirm --needed llvm clang lld
+#          sudo pacman -S --noconfirm --needed base-devel ccache cmake esbuild git go libiconv libtool make ninja pkg-config python rust sed unzip
+#          sudo pacman -S --noconfirm --needed zig
+#          sudo pacman -S --noconfirm --needed nodejs npm
+
+      - name: Install Ubuntu Deps
         run: |
-          sudo pacman -Syu --noconfirm --needed
-          sudo pacman -S --noconfirm --needed llvm clang lld
-          sudo pacman -S --noconfirm --needed base-devel ccache cmake esbuild git go libiconv libtool make ninja pkg-config python rust sed unzip
-          sudo pacman -S --noconfirm --needed zig
-          sudo pacman -S --noconfirm --needed nodejs npm
+          apt install llvm-15 lld-15
+          apt install cargo ccache cmake esbuild git golang libtool ninja-build pkg-config rustc
+          apt install nodejs npm
+          npm install -g @oven/zig
+          
+      - name: Test Zig
+        run: zig version
 
       - name: Clone repo
         run: |
