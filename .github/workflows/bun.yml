@@ -45,6 +45,11 @@ jobs:
         run: |
           git clone https://github.com/oven-sh/bun.git
           
+      - name: npm i
+        run: |
+          cd bun
+          npm i
+    
       - name: make vendor
         run: |
           cd bun
