@@ -48,7 +48,7 @@ jobs:
         run: |
           git clone https://github.com/noeljacob/bun.git
           cd bun
-          git checkout pnpm-patch
+          git checkout pnpx-patch
     
       - name: make vendor-dev
         run: |
