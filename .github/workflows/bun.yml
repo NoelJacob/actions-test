@@ -46,7 +46,7 @@ jobs:
 
       - name: Clone repo
         run: |
-          git clone https://github.com/noeljacob/bun.git
+          git clone https://github.com/noeljacob/bun
           git checkout pnpx-patch
     
       - name: make setup
