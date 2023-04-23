@@ -47,46 +47,18 @@ jobs:
       - name: Clone repo
         run: |
           git clone https://github.com/oven-sh/bun.git
+          cd bun
+          git checkout bun-v0.5.9
     
-      - name: make vendor-dev
+      - name: make bun
         run: |
           cd bun
-          make vendor
+          make bun
           
       - name: make builtins
         run: |
           cd bun
           make builtins
-          
-      - name: make identifier-cache
-        run: |
-          cd bun
-          make identifier-cache
-
-      - name: make clean-bindings
-        run: |
-          cd bun
-          make clean-bindings
-          
-      - name: make jsc-check
-        run: |
-          cd bun
-          make jsc-check
-          
-      - name: make headers
-        run: |
-          cd bun
-          make headers
-          
-      - name: make codegen
-        run: |
-          cd bun
-          make codegen
-          
-      - name: make generate-sink
-        run: |
-          cd bun
-          make generate-sink
 
       - name: make release-bindings -j12
         run: |
