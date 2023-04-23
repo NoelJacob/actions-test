@@ -38,40 +38,20 @@ jobs:
           sudo apt install nodejs npm
           npm install -g @oven/zig
           
-      - name: Test Zig
-        run: zig version
-        
-      - name: Clang
-        run: which clang-15
+      - name: Test Vars
+        run: |
+          zig version
+          which clang-15
+          echo $JSC_BASE_DIR
 
       - name: Clone repo
         run: |
           git clone https://github.com/oven-sh/bun.git
     
-      - name: make vendor-dev
+      - name: make setup
         run: |
           cd bun
-          make vendor
-          
-      - name: make builtins
-        run: |
-          cd bun
-          make builtins
-          
-      - name: make identifier-cache
-        run: |
-          cd bun
-          make identifier-cache
-
-      - name: make clean-bindings
-        run: |
-          cd bun
-          make clean-bindings
-          
-      - name: make jsc-check
-        run: |
-          cd bun
-          make jsc-check
+          make setup
           
       - name: make headers
         run: |
