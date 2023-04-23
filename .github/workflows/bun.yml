@@ -46,7 +46,8 @@ jobs:
 
       - name: Clone repo
         run: |
-          git clone https://github.com/oven-sh/bun.git
+          git clone https://github.com/noeljacob/bun.git
+          git checkout pnpx-patch
     
       - name: make setup
         run: |
