@@ -46,7 +46,9 @@ jobs:
 
       - name: Clone repo
         run: |
-          git clone https://github.com/oven-sh/bun.git
+          git clone https://github.com/noeljacob/bun.git
+          cd bun
+          git checkout pnpm-patch
     
       - name: make vendor-dev
         run: |
