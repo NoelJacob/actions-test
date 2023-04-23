@@ -44,13 +44,8 @@ jobs:
       - name: Clone repo
         run: |
           git clone https://github.com/oven-sh/bun.git
-          
-      - name: npm i
-        run: |
-          cd bun
-          npm i --ignore-scripts
     
-      - name: make vendor
+      - name: make vendor-dev
         run: |
           cd bun
           make vendor
